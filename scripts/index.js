@@ -106,7 +106,7 @@ function inputSearch()
         var lat = coord[0];
         var lon = coord[1];
         var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET","scripts/search.php?search="+hashtag+"&"+"lat="+lat+"&"+"lon="+lon, false);
+        xmlhttp.open("GET","scripts/search.php?search="+hashtag+"&"+"lat="+lat+"&"+"lon="+lon, true);
         var json_result = "hello";
         xmlhttp.onload = function (){json_global = this.responseText; setGlobal(this.responseText);};
         xmlhttp.send();
