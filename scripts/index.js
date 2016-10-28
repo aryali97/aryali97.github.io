@@ -110,6 +110,7 @@ function inputSearch()
         var json_result = "hello";
         xmlhttp.onload = function (){json_global = this.responseText; setGlobal(this.responseText);};
         xmlhttp.send();
+        console.log(json_global);
         var newBounds = new google.maps.LatLngBounds();
         var tmp_list = parseData(json_global); 
         for(obj of tmp_list) {
