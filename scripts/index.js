@@ -83,6 +83,7 @@ function parseData(json_data)
 function inputSearch() 
 {
     var hashtag = document.getElementById("search").value;
+    console.log(hashtag);
     if(hashtag.indexOf("#") > -1){
         hashtag = hashtag.substring(1);
     }
