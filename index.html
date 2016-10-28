@@ -1,0 +1,73 @@
+<!-- api key:             AIzaSyDjRjYwOLi_jLDuEDR5FSXIvQmL2SZGvY8 -->
+<!-- distance matrix key: AIzaSyBFbhB1gG7kTQdvkLK6aiXlHwFr-NelbQQ -->
+
+<!DOCTYPE html>
+<html>
+    
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/index.css" type="text/css" />
+
+<title>Tending 2 Trend</title>
+<script src="scripts/jquery-1.11.3.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places,visualization"></script>
+<script type="text/javascript" src="scripts/index.js"></script>
+<script>
+    document.onkeypress = function(e){
+        if(e == null) {
+            return;
+        }
+        var key = e.keyCode ? e.keyCode : e.which;
+        if(key == 13)
+        {
+            console.log("enter pressed");
+            inputSearch();
+            e.preventDefault();
+        }
+    };
+</script>
+<link rel="shortcut icon" href="images/t2tRESIZED.png">
+</head>
+  <body>            
+    <div class = "searchPanel" id = "searchPanel" style="background:#55acee;color:white;width: 300px;height: 100%;">
+        <form> 
+        <table align="center">
+            <tr><td colspan="2" align="center"><p style="font-size:15px;">Welcome to Tending to Trend! <br> Enter search paramaters to find trends!</p> </td></tr>
+            <tr><td colspan="2" align="center"><img src="images/t2tRESIZED.png"></td></tr>
+            <tr align="center">
+                <td>
+                    <p style="font-size:15px;">Find Trend:</p>
+                </td>
+                <td>
+                    <input id = "search" style="border:None;" type="text" placeholder = "Ex. #CloseFCPS" autofocus> </input>
+                </td>
+            </tr>
+
+            <tr> 
+                <td colspan="2" align="center"><button type = "button" onClick="inputSearch()" style="background:#55acee;color:white; border-style: solid; border-width: 1px;">Submit</button></td>
+            </tr>
+
+            <br>
+            <br>
+            <tr>
+            <td colspan="2" align="center"><button type="button" style="background:#55acee;color:white; border-style: solid; border-width: 1px;" onClick="changeHeatMap()" > Toggle Heat Map </button></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center" ><button type="button" style="background:#55acee;color:white; border-style: solid; border-width: 1px;" onClick="toggleMarkers()" > Toggle Markers </button></td>
+            </tr>
+            <tr>
+            <td colspan="2" align="center" style="color:white;"><p id="message"></p></td>
+            </tr>
+
+        </table>
+        </form>
+    </div>
+
+    
+
+    <div id="map-canvas"></div>
+    
+  </body>
+</html>
+
